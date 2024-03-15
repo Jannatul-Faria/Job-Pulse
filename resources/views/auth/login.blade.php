@@ -60,9 +60,9 @@
                         <div class="mt-4">
                             <fieldset>
                                 <legend class="px-2">Login or Sign up with</legend>
-                                <div class="social-login">
-                                    <ul class="list-unstyled d-flex mb-0">
-                                        <li class="google text-center">
+                                <div class="social-login ">
+                                    <ul class="list-unstyled d-flex mb-0 ">
+                                        <li class="google text-center ">
                                             <a href="{{ route('google.login') }}"> <i class="fab fa-google me-4"></i>Login
                                                 with Google</a>
                                         </li>

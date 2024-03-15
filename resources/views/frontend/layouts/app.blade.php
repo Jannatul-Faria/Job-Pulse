@@ -21,7 +21,7 @@
             <div class="row mt-5">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-link">
-                        <h5 class="text-dark mb-4">Trending Job</h5>
+                        <h5 class="freelance mb-4">Trending Job</h5>
                         <ul class="list-unstyled">
                             <li><a href="#">Browse Jobs</a></li>
                             <li><a href="#">Browse Categories</a></li>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
                     <div class="footer-link">
-                        <h5 class="text-dark mb-4">Trending Companies</h5>
+                        <h5 class="freelance mb-4">Trending Companies</h5>
                         <ul class="list-unstyled">
                             <li><a href="#">Shortcodes</a></li>
                             <li><a href="#">Job Page</a></li>
@@ -48,7 +48,7 @@
                 <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
                     <form method="POST" action="{{ route('web.subscribe') }}">
                         @csrf
-                        <h5 class="text-dark mb-4">Subscribe Us</h5>
+                        <h5 class="freelance mb-4">Subscribe Us</h5>
                         <div class="footer-subscribe">
                             <p>Sign Up to our Newsletter to get the latest news and offers.</p>
                             <form>
@@ -66,7 +66,7 @@
 
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                    <h5 class="text-dark mb-4">Download App</h5>
+                    <h5 class="freelance mb-4">Download App</h5>
                     <div class="footer-subscribe">
                         <p>Download the latest Slick new job apps now</p>
                         <div class="d-inline-block">
@@ -96,19 +96,18 @@
                         <div class="d-flex justify-content-md-start justify-content-center">
                             <ul class="list-unstyled d-flex mb-0">
                                 @foreach (getPage() as $page)
-                                    <li><a href="{{ route('web.page.single', $page->slug) }}">{{ $page->title }}</a>
+                                    <li class="text-white"><a
+                                            href="{{ route('web.page.single', $page->slug) }}">{{ $page->title }}</a>
                                     </li>
                                 @endforeach
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end mt-4 mt-md-0">
-                        <p class="mb-0"> &copy;Copyright <span id="copyright">
-                                <script>
-                                    document.getElementById('copyright').appendChild(document.createTextNode(new Date()
-                                        .getFullYear()))
-                                </script>
-                            </span> <a href="#"> Job Pulse </a>{{ setting()->site_footer }} </p>
+                        <p class="mb-0 text-white"> &copy;Copyright <span class="freelance" href="#"
+                                style="font-weight: 900"> Job Pulse
+                            </span>{{ setting()->site_footer }}
+                        </p>
                     </div>
                 </div>
             </div>

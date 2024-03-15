@@ -20,15 +20,15 @@
                     </div>
                     @if (Auth::user()->role == 2)
                         <div class="col-md-3 text-lg-end">
-                            <a class="btn btn-dark" href="{{ route('company.job-post') }}">Post Job</a>
+                            <a class="btn btn-dark bg-green" href="{{ route('company.job-post') }}">Post Job</a>
                         </div>
                     @elseif (Auth::user()->role == 3)
                         <div class="col-md-3 text-lg-end">
-                            <a class="btn btn-dark" href="{{ route('candidate.dashboard') }}"> DASHBOARD</a>
+                            <a class="btn btn-dark bg-green" href="{{ route('candidate.dashboard') }}"> DASHBOARD</a>
                         </div>
                     @else
                         <div class="col-md-3 text-lg-end">
-                            <a class="btn btn-dark" href="{{ route('admin.dashboard') }}"> DASHBOARD</a>
+                            <a class="btn btn-dark bg-green" href="{{ route('admin.dashboard') }}"> DASHBOARD</a>
                         </div>
                     @endif
 
@@ -55,13 +55,14 @@
                             <div class="item">
                                 <div class="employers-grid mb-4 mb-lg-0">
                                     <div class="employers-list-logo">
-                                        <img class="img-fluid" src="{{ asset('frontend') }}/images/svg/07.svg"
+                                        <img class="img-fluid " src="{{ asset('frontend') }}/images/svg/07.svg"
                                             alt="">
                                     </div>
                                     <div class="employers-list-details">
                                         <div class="employers-list-info">
                                             <div class="employers-list-title">
-                                                <h5 class="mb-0"><span>via</span><span class="text-primary">
+                                                <h5 class="mb-0"><span class="text-primary">via</span><span
+                                                        class="freelance">
                                                         {{ $job?->user?->profile?->companyName }}</span>
                                                 </h5>
                                             </div>
@@ -74,8 +75,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="employers-list-position">
-                                        <a class="btn btn-sm btn-dark">30 Open position</a>
+                                    <div class="employers-list-position ">
+                                        <a class=" btn-sm btn-dark bg-green">30 Open position</a>
                                     </div>
                                 </div>
                             </div>
@@ -105,9 +106,9 @@
                         <div class="style-01">
                             <ul class="nav nav-tabs justify-content-center d-flex mt-0" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link  active" id="profile-tab" data-bs-toggle="tab" href=""
+                                    <a class="nav-link active  bg-green" id="profile-tab" data-bs-toggle="tab"
                                         role="tab" aria-controls="profile" aria-selected="false"><i
-                                            class="fas fa-filter pe-1"></i> Filter Job</a>
+                                            class="fas fa-filter pe-1 "></i> Filter Job</a>
                                 </li>
 
                             </ul>
@@ -123,14 +124,14 @@
                                 @foreach ($jobs as $job)
                                     <div class="col-lg-6 col-sm-6">
                                         <div class="job-list job-grid">
-                                            <div class="job-list-logo ">
+                                            {{-- <div class="job-list-logo ">
                                                 <img class="img-fluid" src="{{ asset('frontend') }}/images/svg/10.svg"
                                                     alt="">
-                                            </div>
+                                            </div> --}}
                                             <div class="job-list-details">
                                                 <div class="job-list-info">
                                                     <div class="job-list-title">
-                                                        <h6><a
+                                                        <h6><a class=""
                                                                 href="{{ route('web.job.single', $job->slug) }}">{{ $job->title }}</a>
                                                         </h6>
                                                     </div>
@@ -145,7 +146,7 @@
                                                             <li><i class="fas fa-filter pe-1"></i>
                                                                 {{ $job->category->name }}
                                                             </li>
-                                                            <li><a class="temporary" href="#"><i
+                                                            <li><a class="{{ $job->jobType->name }}" href="#"><i
                                                                         class="fas fa-suitcase pe-1"></i>
                                                                     {{ $job->jobType->name }}</a>
                                                             </li>
@@ -156,8 +157,9 @@
                                                         <div class="">
                                                             <a href=""><span
                                                                     class="badge badge-lg bg-primary">Apply</span></a>
-                                                            <a href="{{ route('web.job.single', $job->slug) }}"><span
-                                                                    class="badge badge-lg bg-primary">View</span></a>
+                                                            <a class=""
+                                                                href="{{ route('web.job.single', $job->slug) }}"><span
+                                                                    class="badge badge-lg bg-green">View</span></a>
                                                         </div>
 
 

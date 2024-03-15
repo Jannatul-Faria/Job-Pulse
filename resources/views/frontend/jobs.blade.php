@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 @section('frontend_content')
     <section class="header-inner header-inner-big bg-holder text-white"
-        style="background-image: url({{ asset('frontend') }}/images/bg/banner-01.jpg);">
+        style="background-image: url({{ asset('frontend') }}/images/bg-slider/job.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -19,51 +19,6 @@
     </section>
 
 
-    {{-- <section class="space-ptb">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <div class="section-title center">
-                        <h2 class="title">Choose Your Category</h2>
-                        <p>What made each of these people so successful? Motivation.</p>
-                    </div>
-                    <div class="owl-carousel owl-nav-bottom-center" data-nav-arrow="false" data-nav-dots="true"
-                        data-items="4" data-md-items="3" data-sm-items="2" data-xs-items="1" data-xx-items="1"
-                        data-space="15" data-autoheight="true">
-                        @foreach ($categories as $category)
-                            <div class="item">
-                                <div class="employers-grid mb-4 mb-lg-0">
-                                    <div class="employers-list-logo">
-                                        <img class="img-fluid" src="{{ asset('frontend') }}/images/svg/07.svg"
-                                            alt="">
-                                    </div>
-                                    <div class="employers-list-details">
-                                        <div class="employers-list-info">
-                                            <div class="employers-list-title">
-                                                <h5 class="mb-0"><span>via</span><span class="text-primary">
-                                                        {{ $category->name }}</span>
-                                                </h5>
-                                            </div>
-                                            <div class="employers-list-option">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fas fa-map-marker-alt pe-1"></i>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="employers-list-position">
-                                        <a class="btn btn-sm btn-dark">30 Open position</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <section class="space-ptb">
         <div class="container">
@@ -78,11 +33,14 @@
 
                         @foreach ($categories as $category)
                             <a href="{{ route('web.jobCategoryList', $category->slug) }}" class="category-item">
-                                <div class="category-icon mb-1 ">
-                                    <i class="flaticon-money"></i>
+                                <div class="category-icon mb-2">
+                                    <i class="flaticon-businessman"></i>
                                 </div>
-                                <h6>{{ $category->name }}</h6>
-                                <span class="mb-0">{{ count($category->jobs) }}</span>
+                                <div class="mt-2">
+                                    <h6 class="freelance">{{ $category->name }}</h6>
+                                    <span class="mb-0">{{ count($category->jobs) }}</span>
+                                </div>
+
                             </a>
                         @endforeach
                         <div class="col-12 justify-content-center d-flex mt-4">
