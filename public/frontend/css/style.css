@@ -2484,7 +2484,8 @@ button {
 
 .btn-dark {
   background: #00a2ff;
-  border-color: #00a2ff;
+  border-color: #08c708;
+  outline-style: none;
 }
 
 .btn-dark:hover {
